@@ -1,0 +1,10 @@
+node_modules/
+cdk.out/
+*.js
+*.d.ts
+coverage/
+dist/
+build/
+.git/
+package-lock.json
+README.md 

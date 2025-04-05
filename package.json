@@ -1,0 +1,47 @@
+{
+  "name": "everyrealm-cdk",
+  "version": "0.1.0",
+  "bin": {
+    "everyrealm-cdk": "bin/everyrealm-cdk.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "lint": "NODE_OPTIONS=--max-old-space-size=8192 npx eslint 'bin/**/*.ts' 'lib/**/*.ts' 'services/**/*.ts' --ext .ts --ignore-pattern \"**/*.d.ts\"",
+    "lint:fix": "NODE_OPTIONS=--max-old-space-size=8192 npx eslint 'bin/**/*.ts' 'lib/**/*.ts' 'services/**/*.ts' --fix --ext .ts --ignore-pattern \"**/*.d.ts\"",
+    "format": "prettier --write \"**/*.ts\"",
+    "format:check": "prettier --check \"**/*.ts\"",
+    "dev:user": "cd services/user-service && npm run dev",
+    "dev:admin": "cd services/admin-service && npm run dev",
+    "dev:services": "concurrently \"npm run dev:user\" \"npm run dev:admin\"",
+    "dev": "npm run dev:services"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.782.0",
+    "@aws-sdk/lib-dynamodb": "^3.782.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.23.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "22.7.9",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "aws-cdk": "2.1007.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.6.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.186.0",
+    "constructs": "^10.0.0",
+    "dotenv": "^16.4.7",
+    "source-map-support": "^0.5.21"
+  }
+}
